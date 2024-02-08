@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS tienda;
 CREATE DATABASE tienda CHARACTER SET utf8mb4;
-USE tienda;
+USE tienda; 
 
 CREATE TABLE fabricante (
   codigo INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -37,7 +37,7 @@ INSERT INTO producto VALUES(9, 'Portátil Ideapd 320', 444, 2);
 INSERT INTO producto VALUES(10, 'Impresora HP Deskjet 3720', 59.99, 3);
 INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 
-#Consultas
+#Consultas tienda
 #1
 SELECT * FROM producto;
 #2
