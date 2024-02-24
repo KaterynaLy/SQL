@@ -39,41 +39,43 @@ INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 
 #Consultas tienda
 #1
-SELECT * FROM producto;
+SELECT nombre FROM producto;
 #2
 SELECT nombre, precio FROM producto;
 #3
-SELECT nombre, precio, precio * 1.18 AS precio_usd FROM producto;
+SELECT * FROM producto;
 #4
-SELECT nombre AS "nombre de producto", precio AS euros, precio * 1.18 AS "precio_usd" FROM producto;
+SELECT nombre, precio, precio * 1.18 FROM producto;
 #5
-SELECT UPPER(nombre) AS nombre_mayuscula, precio FROM producto;
+SELECT nombre AS "nombre de producto", precio AS euros, precio * 1.18 AS "precio_usd" FROM producto;
 #6
-SELECT LOWER(nombre) AS nombre_minuscula, precio FROM producto;
+SELECT UPPER(nombre) AS nombre_mayuscula, precio FROM producto;
 #7
-SELECT nombre AS nombre_fabricante, UPPER(SUBSTRING(nombre, 1, 2)) AS dos_caracters FROM fabricante;
+SELECT LOWER(nombre) AS nombre_minuscula, precio FROM producto;
 #8
-SELECT nombre, ROUND(precio) AS precio_redondo FROM producto;
+SELECT nombre AS nombre_fabricante, UPPER(SUBSTRING(nombre, 1, 2)) AS dos_caracters FROM fabricante;
 #9
-SELECT nombre, truncate (precio, 0) AS precio_truncat FROM producto;
+SELECT nombre, ROUND(precio) AS precio_redondo FROM producto;
 #10
-SELECT nombre, truncate(precio, 0) AS precio_truncat FROM producto;
+SELECT nombre, truncate (precio,0) AS precio_truncat FROM producto;
 #11
-SELECT DISTINCT codigo_fabricante FROM producto WHERE codigo_fabricante IS NOT NULL;
+SELECT codigo_fabricante FROM producto WHERE codigo_fabricante IS NOT NULL;
 #12
-SELECT nombre FROM fabricante ORDER BY nombre ASC;
+SELECT DISTINCT codigo_fabricante FROM producto WHERE codigo_fabricante IS NOT NULL;
 #13
-SELECT nombre FROM fabricante ORDER BY nombre DESC;
+SELECT nombre FROM fabricante ORDER BY nombre ASC;
 #14
-SELECT nombre, precio FROM producto ORDER BY nombre ASC, precio DESC;
+SELECT nombre FROM fabricante ORDER BY nombre DESC;
 #15
-SELECT * FROM fabricante LIMIT 5;
+SELECT nombre, precio FROM producto ORDER BY nombre ASC, precio DESC;
 #16
-SELECT * FROM fabricante LIMIT 2 OFFSET 3; #limit 2 filas y a partir de la 4 fila seria el resultado
+SELECT * FROM fabricante LIMIT 5;
 #17
-SELECT nombre, precio FROM producto ORDER BY precio ASC LIMIT 1;
+SELECT * FROM fabricante LIMIT 2 OFFSET 3;
 #18
+SELECT nombre, precio FROM producto ORDER BY precio ASC LIMIT 1;
 SELECT nombre, precio FROM producto ORDER BY precio DESC LIMIT 1;
+
 #19
 SELECT p.nombre FROM producto p JOIN fabricante f ON p.codigo_fabricante = f.codigo WHERE f.codigo = 2;
 #20
